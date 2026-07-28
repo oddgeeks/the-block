@@ -1,45 +1,52 @@
-# Submission Template
-
-Use this as a starting point for your repo's README in your fork of this challenge.
-
-When you're finished, send the link to your repo to your contact at **OPENLANE**.
-
-Delete what you don't need, add what you want.
-
----
-
-# [Your Project Name]
+# The Block Auction
 
 ## How to Run
 
-Step-by-step instructions to get the project running locally.
+```bash
+npm install
+npm run dev
+```
+
+Open the Vite URL printed in the terminal, usually `http://localhost:5173`.
+
+If needed:
+
+```bash
+npm run dev -- --host 0.0.0.0 --port 5173
+```
 
 ## Time Spent
 
-Roughly how much time you spent and how you approached the time box.
+Built as a focused prototype: scaffold, structured React components, inventory/detail/bid flow, responsive styling, documentation, and checks.
 
 ## Assumptions and Scope
 
-What you intentionally included, skipped, or simplified.
+This is a frontend-only buyer experience. Bid updates are local state only. Authentication, checkout, seller tooling, and persistent auction infrastructure are outside the prototype scope.
 
 ## Stack
 
-- **Frontend:**
-- **Backend:**
-- **Database:**
+- **Frontend:** React + Vite
+- **Backend:** None
+- **Database:** None; local JSON dataset
 
 ## What I Built
 
-A brief description of your project and your approach.
+A vehicle auction browsing experience with search, filters, sortable inventory, detailed vehicle inspection, condition and damage notes, reserve context, and a validated bid flow.
 
 ## Notable Decisions
 
-What choices did you make and why? What tradeoffs did you consider?
+I kept `App.jsx` focused on state and orchestration, split UI into small files in `src/components`, and moved shared formatting and auction helpers into `src/utils`.
 
 ## Testing
 
-What you tested and how.
+Ran:
+
+```bash
+npm run lint
+npm run build
+npm audit
+```
 
 ## What I'd Do With More Time
 
-What would you add, improve, or change?
+Add persisted bids, watchlists, richer vehicle-history data, and browser-level regression tests for core flows.
